@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _sprintSpeed;
     [SerializeField] private float _jumpForce;
     [SerializeField] private float _dashSpeed;
+    [SerializeField] private float _wallRunSpeed;
 
     [SerializeField] private float _playerHeight;
     [SerializeField] private float _additionalJumps = 2;
@@ -57,10 +58,12 @@ public class PlayerMovement : MonoBehaviour
         Walking,
         Sprinting,
         Air,
-        Dashing
+        Dashing,
+        WallRunning
     }
 
     public bool dashing;
+    public bool wallRunning;
 
     public bool Moving { get; private set; }
 
@@ -211,6 +214,13 @@ public class PlayerMovement : MonoBehaviour
 
         _lastDesiredMoveSpeed = _desiredMoveSpeed;
         _lastState = _state;
+
+        if (wallRunning)
+        {
+            _state = MovementState.WallRunning;
+            _desiredMoveSpeed = _walkSpeed;
+
+        }
     }
 
     private void SpeedControl()
