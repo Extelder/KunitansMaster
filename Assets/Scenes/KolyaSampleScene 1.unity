@@ -1410,7 +1410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanChanged: 1
   Animator: {fileID: 1976178820}
-  _cdTimeInSeconds: 1
+  _cdTimeInSeconds: 0.95
   _playerRigidbody: {fileID: 2071951334}
   _force: 25
   _camera: {fileID: 117923011}
@@ -1525,14 +1525,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a62e66027a5c44c459835331f8dbeb60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dashForce: 30
-  _dashUpwardForce: 0
+  _dashForce: 50
+  _dashUpwardForce: 0.15
   _dashDuration: 0.25
-  _dashCoolDown: 2.2
-  _dashCoolDownTimer: 0
+  _dashCoolDown: 1
+  _dashCoolDownTimer: -0.000067093875
   _maxDashYSpeed: 15
   _dashFov: 95
-  _useCameraForward: 1
+  _useCameraForward: 0
   _allowAllDirections: 1
   _disableGravity: 1
   _resetVelocity: 1
