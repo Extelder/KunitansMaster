@@ -29,6 +29,7 @@ public class AirGunShootState : ItemState
 
     public void PerformShoot()
     {
+        _playerRigidbody.velocity = new Vector3(0, 0, 0);
         _playerRigidbody.AddForce(-_camera.forward * _force, ForceMode.Impulse);
     }
 

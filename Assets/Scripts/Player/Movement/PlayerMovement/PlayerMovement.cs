@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _dashSpeedChangeFactor;
 
 
+    [SerializeField] private PlayerWallRunning _playerWallRunning;
     [SerializeField] private Transform _orientation;
     [SerializeField] private Transform _groundCheckPoint;
     [SerializeField] private LayerMask _whatIsGround;
@@ -34,12 +35,10 @@ public class PlayerMovement : MonoBehaviour
     private float _horiozntalInput;
     private float _verticallInput;
     private float _jumps = 2;
-    private float _movementSpeed;
     private float _desiredMoveSpeed;
     private float _lastDesiredMoveSpeed;
     private float _speedChangeFactor;
 
-    private bool _grounded;
     private bool _readyToJump = true;
     private bool _exitingSlope;
     private bool _keepMoment;
@@ -50,7 +49,9 @@ public class PlayerMovement : MonoBehaviour
 
     private RaycastHit _slopeHit;
 
-    public float _maxYSpeed;
+    public bool Grounded;
+    public float MaxYSpeed;
+    public float MovementSpeed;
 
     [SerializeField]
     private enum MovementState
@@ -94,19 +95,19 @@ public class PlayerMovement : MonoBehaviour
         MyInput();
         StateHandler();
 
-        //_grounded = Physics.Raycast(transform.position, Vector3.down, _playerHeight * 0.5f + 0.2f, _whatIsGround);
+        //Grounded = Physics.Raycast(transform.position, Vector3.down, _playerHeight * 0.5f + 0.2f, _whatIsGround);
         Collider[] others = Physics.OverlapSphere(_groundCheckPoint.position, _groundCheckRadius, _whatIsGround);
 
         Debug.Log(others.Length);
 
         if (others.Length > 0)
         {
-            _jumps = _additionalJumps;
-            _grounded = true;
+            ResetJumps();
+            Grounded = true;
         }
         else
         {
-            _grounded = false;
+            Grounded = false;
         }
 
 
@@ -114,6 +115,11 @@ public class PlayerMovement : MonoBehaviour
             _rb.drag = _groundDrag;
         else
             _rb.drag = 0;
+    }
+
+    public void ResetJumps()
+    {
+        _jumps = _additionalJumps;
     }
 
     private void MyInput()
@@ -135,25 +141,25 @@ public class PlayerMovement : MonoBehaviour
     private void MovePlayer()
     {
         if (_state == MovementState.Dashing)
-            return; 
+            return;
 
         _movementDirection = _orientation.forward * _verticallInput + _orientation.right * _horiozntalInput;
 
-        if (_grounded)
+        if (Grounded)
         {
-            _rb.AddForce(_movementDirection.normalized * _movementSpeed * 10f, ForceMode.Force);
+            _rb.AddForce(_movementDirection.normalized * MovementSpeed * 10f, ForceMode.Force);
             if (_movementDirection.normalized.x > 0 || _movementDirection.normalized.z > 0)
             {
                 Moving = true;
             }
         }
 
-        else if (!_grounded)
-            _rb.AddForce(_movementDirection.normalized * _movementSpeed * 10f * _airMultiplier, ForceMode.Force);
+        else if (!Grounded)
+            _rb.AddForce(_movementDirection.normalized * MovementSpeed * 10f * _airMultiplier, ForceMode.Force);
 
         if (OnSlope() && !_exitingSlope)
         {
-            _rb.AddForce(GetSlopeMoveDirection() * _movementSpeed * 20f, ForceMode.Force);
+            _rb.AddForce(GetSlopeMoveDirection() * MovementSpeed * 20f, ForceMode.Force);
 
             if (_rb.velocity.y > 0)
                 _rb.AddForce(Vector3.down * 80f, ForceMode.Force);
@@ -165,13 +171,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void StateHandler()
     {
-        if (_grounded && Input.GetKey(_sprintKey))
+        if (Grounded && Input.GetKey(_sprintKey))
         {
             _state = MovementState.Sprinting;
             _desiredMoveSpeed = _sprintSpeed;
         }
 
-        else if (_grounded)
+        else if (Grounded)
         {
             _state = MovementState.Walking;
             _desiredMoveSpeed = _walkSpeed;
@@ -208,7 +214,7 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 StopAllCoroutines();
-                _movementSpeed = _desiredMoveSpeed;
+                MovementSpeed = _desiredMoveSpeed;
             }
         }
 
@@ -219,33 +225,30 @@ public class PlayerMovement : MonoBehaviour
         {
             _state = MovementState.WallRunning;
             _desiredMoveSpeed = _walkSpeed;
-
         }
     }
 
     private void SpeedControl()
     {
-
-
         if (OnSlope() && !_exitingSlope)
         {
-            if (_rb.velocity.magnitude > _movementSpeed)
-                _rb.velocity = _rb.velocity.normalized * _movementSpeed;
+            if (_rb.velocity.magnitude > MovementSpeed)
+                _rb.velocity = _rb.velocity.normalized * MovementSpeed;
         }
 
         else
         {
             Vector3 _flatVelocity = new Vector3(_rb.velocity.x, 0f, _rb.velocity.z);
 
-            if (_flatVelocity.magnitude > _movementSpeed)
+            if (_flatVelocity.magnitude > MovementSpeed)
             {
-                Vector3 _limitedVelocity = _flatVelocity.normalized * _movementSpeed;
+                Vector3 _limitedVelocity = _flatVelocity.normalized * MovementSpeed;
                 _rb.velocity = new Vector3(_limitedVelocity.x, _rb.velocity.y, _limitedVelocity.z);
             }
         }
 
-        if (_maxYSpeed != 0 && _rb.velocity.y > _maxYSpeed)
-            _rb.velocity = new Vector3(_rb.velocity.x, _maxYSpeed, _rb.velocity.z);
+        if (MaxYSpeed != 0 && _rb.velocity.y > MaxYSpeed)
+            _rb.velocity = new Vector3(_rb.velocity.x, MaxYSpeed, _rb.velocity.z);
     }
 
     private void Jump()
@@ -266,6 +269,8 @@ public class PlayerMovement : MonoBehaviour
 
     private bool OnSlope()
     {
+        if (_playerWallRunning.OnWall)
+            return true;
         if (Physics.Raycast(transform.position, Vector3.down, out _slopeHit, _playerHeight * 0.5f + 0.3f))
         {
             float _angle = Vector3.Angle(Vector3.up, _slopeHit.normal);
@@ -284,21 +289,21 @@ public class PlayerMovement : MonoBehaviour
     {
         // smoothly lerp movementSpeed to desired value
         float time = 0;
-        float difference = Mathf.Abs(_desiredMoveSpeed - _movementSpeed);
-        float startValue = _movementSpeed;
+        float difference = Mathf.Abs(_desiredMoveSpeed - MovementSpeed);
+        float startValue = MovementSpeed;
 
         float boostFactor = _speedChangeFactor;
 
         while (time < difference)
         {
-            _movementSpeed = Mathf.Lerp(startValue, _desiredMoveSpeed, time / difference);
+            MovementSpeed = Mathf.Lerp(startValue, _desiredMoveSpeed, time / difference);
 
             time += Time.deltaTime * boostFactor;
 
             yield return null;
         }
 
-        _movementSpeed = _desiredMoveSpeed;
+        MovementSpeed = _desiredMoveSpeed;
         _speedChangeFactor = 1f;
         _keepMoment = false;
     }

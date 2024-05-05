@@ -12,8 +12,6 @@ public class PlayerDash : MonoBehaviour
     [SerializeField] private float _maxDashYSpeed;
     [SerializeField] private float _dashFov;
 
-    [SerializeField] private bool _useCameraForward = true;
-    [SerializeField] private bool _allowAllDirections = true;
     [SerializeField] private bool _disableGravity = true;
     [SerializeField] private bool _resetVelocity = true;
 
@@ -53,23 +51,19 @@ public class PlayerDash : MonoBehaviour
         else
             _dashCoolDownTimer = _dashCoolDown;
 
-        Transform forwartTransform;
+        Transform forwardTransform;
 
-        if (_useCameraForward)
-            forwartTransform = _playerCamera;
-        else
-            forwartTransform = _orientation;
+        forwardTransform = _orientation;
 
         _playerMovement.dashing = true;
-        _playerMovement._maxYSpeed = _maxDashYSpeed;
-
+        _playerMovement.MaxYSpeed = _maxDashYSpeed;
 
 
         Invoke(nameof(ResetDash), _dashDuration);
 
         Invoke(nameof(DelayedDashForce), 0.025f);
 
-        Vector3 direction = GetDirection(forwartTransform);
+        Vector3 direction = GetDirection(forwardTransform);
 
         Vector3 forceToApply = direction * _dashForce + _orientation.up * _dashUpwardForce;
 
@@ -77,7 +71,7 @@ public class PlayerDash : MonoBehaviour
 
         _delayedForceToApply = forceToApply;
 
-        if(_disableGravity)
+        if (_disableGravity)
             _rb.useGravity = true;
 
         _cam.DoFov(_dashFov);
@@ -86,9 +80,9 @@ public class PlayerDash : MonoBehaviour
     private void ResetDash()
     {
         _playerMovement.dashing = false;
-        _playerMovement._maxYSpeed = 0;
+        _playerMovement.MaxYSpeed = 0;
 
-        if(_disableGravity)
+        if (_disableGravity)
             _rb.useGravity = true;
 
         _cam.DoFov(85f);
@@ -102,16 +96,31 @@ public class PlayerDash : MonoBehaviour
         _rb.AddForce(_delayedForceToApply, ForceMode.Impulse);
     }
 
-    private Vector3 GetDirection(Transform forwardTransform) 
+    private Vector3 GetDirection(Transform forwardTransform)
     {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
 
-        Vector3 direction = new Vector3();
+        if (horizontalInput == 0 && verticalInput == 0)
+        {
+            return forwardTransform.forward;
+        }
 
-        if(_allowAllDirections)
-            direction = forwardTransform.forward;
+        if (horizontalInput != 0 && verticalInput != 0)
+        {
+            return forwardTransform.forward * verticalInput + forwardTransform.right * horizontalInput;
+        }
 
-        return direction.normalized;
+        if (horizontalInput != 0)
+        {
+            return forwardTransform.right * horizontalInput;
+        }
+
+        if (verticalInput != 0)
+        {
+            return forwardTransform.forward * verticalInput;
+        }
+
+        return forwardTransform.forward;
     }
 }
