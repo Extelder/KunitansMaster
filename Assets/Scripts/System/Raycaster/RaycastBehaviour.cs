@@ -31,6 +31,20 @@ public class RaycastBehaviour : MonoBehaviour
         return collider;
     }
 
+    public bool GetHitColliderWithOffset(out Collider collider, Vector3 offset)
+    {
+        collider = GetRaycastHitWithOffset(offset).collider;
+        return collider;
+    }
+
+    public bool GetHitColliderWithOffset(out Collider collider, Vector3 offset, out RaycastHit hit)
+    {
+        hit = GetRaycastHitWithOffset(offset);
+        collider = hit.collider;
+        
+        return collider;
+    }
+
     public bool GetHitColliderWithStartAndDirection(out Collider collider, Vector3 start, Vector3 direction)
     {
         collider = GetRaycastHitWithStartAndDirection(start, direction).collider;

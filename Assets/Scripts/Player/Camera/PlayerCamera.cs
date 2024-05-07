@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using DG.Tweening;
 using UniRx;
@@ -30,7 +31,7 @@ public class PlayerCamera : MonoBehaviour
         _fovTween.Kill();
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         float _mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * _sensX;
         float _mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * _sensY;
@@ -43,6 +44,7 @@ public class PlayerCamera : MonoBehaviour
         transform.rotation = Quaternion.Euler(_xRotation, _yRotation, _zRotation);
         _orientation.rotation = Quaternion.Euler(0, _yRotation, 0);
     }
+
 
     public void DoZ(float endValue, float duration)
     {

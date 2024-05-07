@@ -86,10 +86,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (_movementDirection.normalized.x <= 0 || _movementDirection.normalized.z <= 0)
+        if (_horiozntalInput == 0 && _verticallInput == (0))
         {
             Moving = false;
         }
+
+        if (!Grounded)
+            Moving = false;
+
 
         SpeedControl();
         MyInput();
@@ -148,7 +152,7 @@ public class PlayerMovement : MonoBehaviour
         if (Grounded)
         {
             _rb.AddForce(_movementDirection.normalized * MovementSpeed * 10f, ForceMode.Force);
-            if (_movementDirection.normalized.x > 0 || _movementDirection.normalized.z > 0)
+            if (_horiozntalInput != 0 || _verticallInput != 0)
             {
                 Moving = true;
             }
