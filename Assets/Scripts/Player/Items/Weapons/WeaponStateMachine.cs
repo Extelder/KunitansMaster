@@ -13,12 +13,17 @@ public class WeaponStateMachine : StateMachine
 
     private CompositeDisposable _disposable = new CompositeDisposable();
 
-    public override void Start()
+    public override void OnEnable()
     {
-        base.Start();
+        base.OnEnable();
         Observable.EveryUpdate().Subscribe(_ =>
         {
             if (Input.GetKeyDown(KeyCode.Mouse0) && _shoot.CanShoot)
+            {
+                ChangeState(_shoot);
+            }
+
+            if (Input.GetKey(KeyCode.Mouse0) && _shoot.CanShoot)
             {
                 ChangeState(_shoot);
             }

@@ -15,4 +15,4 @@ MonoBehaviour:
   Name: WaterEagle
   Id: 0
   DamagePerHit: 25
-  RandomRangeMultiplayer: 0.05
+  RandomRangeMultiplayer: 0.01

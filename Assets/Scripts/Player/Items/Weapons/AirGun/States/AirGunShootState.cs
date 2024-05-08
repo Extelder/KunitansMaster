@@ -38,6 +38,8 @@ public class AirGunShootState : WeaponShootState
 
     private void OnDisable()
     {
+        AnimationEndCanChanged();
+        CanShoot = true;
         _disposable.Clear();
     }
 }

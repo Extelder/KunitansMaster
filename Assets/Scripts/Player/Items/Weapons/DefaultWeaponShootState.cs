@@ -24,4 +24,9 @@ public class DefaultWeaponShootState : WeaponShootState
         CanChanged = true;
         CanShoot = true;
     }
+
+    private void OnDisable()
+    {
+        AnimationEndCanChanged();
+    }
 }

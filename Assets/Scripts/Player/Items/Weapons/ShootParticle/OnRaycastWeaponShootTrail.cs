@@ -7,7 +7,7 @@ public class OnRaycastWeaponShootTrail : MonoBehaviour
     [SerializeField] private RaycastWeaponShoot _weaponShoot;
     [SerializeField] private Transform _nullHitSafeTrailTargetPoint;
     [SerializeField] private Transform _spawnPoint;
-    [SerializeField] private TrailRenderer _trailPrefab;
+    [SerializeField] private Pool _trailPool;
 
     private void OnEnable()
     {
@@ -32,7 +32,8 @@ public class OnRaycastWeaponShootTrail : MonoBehaviour
         }
 
 
-        TrailRenderer trailRenderer = Instantiate(_trailPrefab, _spawnPoint.position, Quaternion.identity);
+        TrailRenderer trailRenderer = _trailPool.GetFreeElement(_spawnPoint.position, Quaternion.identity)
+            .GetComponent<TrailRenderer>();
         StartCoroutine(SpawnTrail(trailRenderer, point));
     }
 
@@ -49,7 +50,5 @@ public class OnRaycastWeaponShootTrail : MonoBehaviour
         }
 
         trailRenderer.transform.position = point;
-
-        Destroy(trailRenderer.gameObject, trailRenderer.time);
     }
 }
