@@ -6,4 +6,5 @@ using UnityEngine;
 public class RaycastWeaponItem : WeaponItem
 {
     public float RandomRangeMultiplayer;
+    public float HitsPerShot;
 }

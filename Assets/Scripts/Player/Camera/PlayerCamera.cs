@@ -43,7 +43,7 @@ public class PlayerCamera : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(_xRotation, _yRotation, _zRotation);
         _orientation.rotation = Quaternion.Euler(0, _yRotation, 0);
-    }
+   }
 
 
     public void DoZ(float endValue, float duration)

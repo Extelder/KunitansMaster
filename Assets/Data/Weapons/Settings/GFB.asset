@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d648c9e1d40fc24db6010ebf24eeaeb, type: 3}
-  m_Name: WaterEagle
+  m_Name: GFB
   m_EditorClassIdentifier: 
-  Name: WaterEagle
-  Id: 0
+  Name: GFB
+  Id: 1
   DamagePerHit: 25
-  RandomRangeMultiplayer: 0.01
+  RandomRangeMultiplayer: 0.13
+  HitsPerShot: 7

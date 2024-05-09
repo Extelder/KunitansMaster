@@ -16,20 +16,25 @@ public class RaycastWeaponShoot : WeaponShoot
     public override void OnShootPerformed()
     {
         base.OnShootPerformed();
-        CurrentShootOffset = Random.insideUnitCircle * Weapon.RandomRangeMultiplayer;
+        CameraShakeInvoke();
 
-        if (GetHitColliderWithOffset(out Collider collider, CurrentShootOffset, out RaycastHit hit))
+        for (int i = 0; i < Weapon.HitsPerShot; i++)
         {
-            ShootPerformedWithRaycastHit?.Invoke(hit);
-            Debug.Log(collider.gameObject.name);
-            if (collider.TryGetComponent<IWeaponVisitor>(out IWeaponVisitor weaponVisitor))
+            CurrentShootOffset = Random.insideUnitCircle * Weapon.RandomRangeMultiplayer;
+
+            if (GetHitColliderWithOffset(out Collider collider, CurrentShootOffset, out RaycastHit hit))
             {
-                Accept(weaponVisitor);
+                ShootPerformedWithRaycastHit?.Invoke(hit);
+                Debug.Log(collider.gameObject.name);
+                if (collider.TryGetComponent<IWeaponVisitor>(out IWeaponVisitor weaponVisitor))
+                {
+                    Accept(weaponVisitor);
+                }
             }
-        }
-        else
-        {
-            ShootPerformedWithRaycastHit?.Invoke(null);
+            else
+            {
+                ShootPerformedWithRaycastHit?.Invoke(null);
+            }
         }
     }
 }

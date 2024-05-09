@@ -13,6 +13,7 @@ public class WeaponShoot : RaycastBehaviour
     public Vector3 CurrentShootOffset;
 
     public event Action ShootPerformed;
+    public event Action CameraShake;
 
     private void OnEnable()
     {
@@ -32,5 +33,10 @@ public class WeaponShoot : RaycastBehaviour
     public void Accept(IWeaponVisitor visitor)
     {
         visitor.Visit(this);
+    }
+
+    public void CameraShakeInvoke()
+    {
+        CameraShake?.Invoke();
     }
 }
