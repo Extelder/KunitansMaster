@@ -23,6 +23,7 @@ public class TimeManager : MonoBehaviour
     public void ContinueTime()
     {
         TimeIsStopped = false;
+        Time.timeScale = 1f;
 
         var objects = FindObjectsOfType<TimeBody>(); //Find Every object with the Timebody Component
         for (var i = 0; i < objects.Length; i++)
@@ -34,5 +35,6 @@ public class TimeManager : MonoBehaviour
     public void StopTime()
     {
         TimeIsStopped = true;
+        Time.timeScale = 0.2f;
     }
 }
