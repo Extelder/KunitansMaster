@@ -31,7 +31,7 @@ public class PlayerCamera : MonoBehaviour
         _fovTween.Kill();
     }
 
-    private void LateUpdate()
+    private void Update()
     {
         float _mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * _sensX;
         float _mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * _sensY;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OmRaycastWeaponShootImpact : MonoBehaviour
+public class OnRaycastWeaponShootImpact : MonoBehaviour
 {
     [SerializeField] private RaycastWeaponShoot _weaponShoot;
     [SerializeField] private Transform _player;

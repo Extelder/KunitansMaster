@@ -11,7 +11,6 @@ public class PlayerStop : MonoBehaviour
     [SerializeField] private KeyCode _timeInvertKey;
     [SerializeField] private Volume _volume;
 
-
     private float _targetStopVolumeWeight;
 
     private void Update()
