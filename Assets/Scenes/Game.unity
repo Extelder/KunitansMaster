@@ -23,10 +23,10 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 4.6
   m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubtractiveShadowColor: {r: 1, g: 1, b: 1, a: 1}
+  m_SkyboxMaterial: {fileID: 2100000, guid: f531e09e2ad2fb440b4eed7605863143, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.00077867036, g: 0.0041233166, b: 0.019989327, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -434,7 +434,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 12a3cb69bcbe60e448aa72cef6d80087, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1915,7 +1915,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 12a3cb69bcbe60e448aa72cef6d80087, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2384,7 +2384,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.95661604, y: -0.27696112, z: -0.09043468}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 0.000000022351742, y: 2.224631, z: 0.000000074505806}
   serializedVersion: 2
   m_SwingAxis: {x: -0.28678164, y: 0.8403395, z: 0.45998454}
   m_TwistLimitSpring:
@@ -2700,7 +2700,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &450699763
 Transform:
   m_ObjectHideFlags: 0
@@ -2836,7 +2836,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 3739e562a03fc0b4982d8aa66cc50865, type: 3}
+  - {fileID: 2100000, guid: af089ba3f236b004fb2bb64119f294d8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2961,7 +2961,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.038081214, y: 0.0000001721325, z: -0.7489516}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 0.000000115484, y: 1.4004613, z: -0.0000008940697}
   serializedVersion: 2
   m_SwingAxis: {x: 0.99870825, y: -0.00179369, z: 0.050780278}
   m_TwistLimitSpring:
@@ -3146,15 +3146,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4174915794597638, guid: 2e33bbd89680b744a8f2b0727a31b0ca, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.08189072
+      value: 0.11373802
       objectReference: {fileID: 0}
     - target: {fileID: 4174915794597638, guid: 2e33bbd89680b744a8f2b0727a31b0ca, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.08189072
+      value: 0.11373802
       objectReference: {fileID: 0}
     - target: {fileID: 4174915794597638, guid: 2e33bbd89680b744a8f2b0727a31b0ca, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.16392063
+      value: 0.22766936
       objectReference: {fileID: 0}
     - target: {fileID: 4174915794597638, guid: 2e33bbd89680b744a8f2b0727a31b0ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3219,17 +3219,17 @@ PrefabInstance:
     - target: {fileID: 198182738841708474, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198182738841708474, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198182738841708474, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
         type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.020871071
+      objectReference: {fileID: 0}
+    - target: {fileID: 198182738841708474, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
+        type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.011263847
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198243587338933736, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
         type: 3}
@@ -3249,17 +3249,17 @@ PrefabInstance:
     - target: {fileID: 198243587338933736, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198243587338933736, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198243587338933736, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
         type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.020871071
+      objectReference: {fileID: 0}
+    - target: {fileID: 198243587338933736, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
+        type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.011263847
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198290218882858484, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
         type: 3}
@@ -3284,17 +3284,17 @@ PrefabInstance:
     - target: {fileID: 198290218882858484, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198290218882858484, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198290218882858484, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
         type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.020871071
+      objectReference: {fileID: 0}
+    - target: {fileID: 198290218882858484, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
+        type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.011263847
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198388966662512768, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
         type: 3}
@@ -3319,17 +3319,17 @@ PrefabInstance:
     - target: {fileID: 198388966662512768, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198388966662512768, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198388966662512768, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
         type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.020871071
+      objectReference: {fileID: 0}
+    - target: {fileID: 198388966662512768, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
+        type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.011263847
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198723461487063128, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
         type: 3}
@@ -3354,17 +3354,17 @@ PrefabInstance:
     - target: {fileID: 198723461487063128, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198723461487063128, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198723461487063128, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
         type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.020871071
+      objectReference: {fileID: 0}
+    - target: {fileID: 198723461487063128, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
+        type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.011263847
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198738286913409932, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
         type: 3}
@@ -3389,17 +3389,17 @@ PrefabInstance:
     - target: {fileID: 198738286913409932, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198738286913409932, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198738286913409932, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
         type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.020871071
+      objectReference: {fileID: 0}
+    - target: {fileID: 198738286913409932, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
+        type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.011263847
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198992326210486402, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
         type: 3}
@@ -3419,17 +3419,17 @@ PrefabInstance:
     - target: {fileID: 198992326210486402, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198992326210486402, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198992326210486402, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
         type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.029372733
+      objectReference: {fileID: 0}
+    - target: {fileID: 198992326210486402, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
+        type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.011263847
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 199086556701211102, guid: 2e33bbd89680b744a8f2b0727a31b0ca,
         type: 3}
@@ -3669,7 +3669,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.65
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -3681,7 +3681,7 @@ Light:
     m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 0.56
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -4236,7 +4236,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.9534101, y: 0.28407997, z: 0.101528}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.000000115484, y: 2.2244663, z: -0.000000074505806}
   serializedVersion: 2
   m_SwingAxis: {x: 0.29767016, y: 0.83119607, z: 0.46958023}
   m_TwistLimitSpring:
@@ -5008,7 +5008,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 0e3ad63f883b06b458c1ef2d59167313, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5172,7 +5172,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 12a3cb69bcbe60e448aa72cef6d80087, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5555,7 +5555,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.02976422, y: 0.000000014901161, z: -0.520845}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 1.3689543, y: 1.7230072, z: -0.013782389}
   serializedVersion: 2
   m_SwingAxis: {x: -0.9983696, y: 0.0017927922, z: 0.05705288}
   m_TwistLimitSpring:
@@ -5947,6 +5947,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1054481785}
   - component: {fileID: 1054481786}
+  - component: {fileID: 1054481787}
   m_Layer: 6
   m_Name: GFBParent
   m_TagString: Untagged
@@ -6013,6 +6014,33 @@ MonoBehaviour:
   swaySmoothCounteraction: 1
   rotationSwayMultiplier: -1
   positionSwayMultiplier: 1
+--- !u!114 &1054481787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054481784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1dc65cb5232c1140821c8cd5a5a9e1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisableEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1625140738}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1058794731 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3086436065929644917, guid: 274a63f24cc49f042ba73cf644e32df2,
@@ -6081,7 +6109,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.9999669, y: 0.007690427, z: 0.0026804698}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 0.7160309, y: -0.4070202, z: -0.1372607}
   serializedVersion: 2
   m_SwingAxis: {x: 0.0026881495, y: 0.0009884348, z: 0.9999959}
   m_TwistLimitSpring:
@@ -6260,7 +6288,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.41243058, y: 0.000043241966, z: -0.20675993}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.00000072696787, y: 2.013267, z: -0.0000010884839}
   serializedVersion: 2
   m_SwingAxis: {x: -0.44815713, y: 0.0019780016, z: -0.8939528}
   m_TwistLimitSpring:
@@ -6413,7 +6441,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.05
+  m_Time: 0.145
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -6422,8 +6450,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 0.05
+        time: 0.003829956
+        value: 0.3072632
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -6445,7 +6473,7 @@ TrailRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 1, g: 0, b: 0, a: 1}
-      key1: {r: 0, g: 0.13389783, b: 0.9622642, a: 0.5176471}
+      key1: {r: 0.9607843, g: 0, b: 0.040082466, a: 0.5176471}
       key2: {r: 0, g: 0, b: 0, a: 0.20784314}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -7032,7 +7060,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.19946928, y: 0.0008327135, z: -0.40682554}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 0.00000013767169, y: 2.0135334, z: -0.00000031531692}
   serializedVersion: 2
   m_SwingAxis: {x: 0.8978804, y: -0.0008925684, z: -0.44023868}
   m_TwistLimitSpring:
@@ -7245,7 +7273,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 0e3ad63f883b06b458c1ef2d59167313, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7654,7 +7682,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 2.314394e-12, z: -4.6660818e-11}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 0.000049997267, y: 1.5887461, z: 0.0006081481}
   serializedVersion: 2
   m_SwingAxis: {x: 4.6469495e-11, y: 0.0003831794, z: 0.99999994}
   m_TwistLimitSpring:
@@ -7934,6 +7962,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1585365815}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1625140738 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100004, guid: b7d03fb0762c75449af69d624547e358,
+    type: 3}
+  m_PrefabInstance: {fileID: 1460334492}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1680396429 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4332706925441422008, guid: 274a63f24cc49f042ba73cf644e32df2,
@@ -8002,7 +8036,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.99995315, y: -0.009552006, z: 0.0016266411}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 0.000000026077032, y: 2.7647169, z: -0.00000026077032}
   serializedVersion: 2
   m_SwingAxis: {x: 0.0022482711, y: -0.065432794, z: 0.9978545}
   m_TwistLimitSpring:
@@ -8104,7 +8138,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.042661052, y: -0.00000029179432, z: -0.7486049}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 0.000000084750354, y: 1.400751, z: -0.00000059604645}
   serializedVersion: 2
   m_SwingAxis: {x: -0.9983786, y: 0.0017925724, z: 0.05689503}
   m_TwistLimitSpring:
@@ -8206,7 +8240,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.999967, y: -0.0076896953, z: -0.0026483785}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.71603113, y: -0.4070201, z: -0.12825152}
   serializedVersion: 2
   m_SwingAxis: {x: -0.0026383656, y: -0.001311994, z: 0.99999565}
   m_TwistLimitSpring:
@@ -8440,7 +8474,7 @@ MonoBehaviour:
   CanShoot: 1
   _cdTimeInSeconds: 0.95
   _playerRigidbody: {fileID: 2071951334}
-  _force: 15
+  _force: 25
   _camera: {fileID: 117923011}
 --- !u!114 &1976178825
 MonoBehaviour:
@@ -8527,7 +8561,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0.026568472, y: 0.000000014901161, z: -0.5209098}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -1.3689533, y: 1.7230167, z: 0.014054029}
   serializedVersion: 2
   m_SwingAxis: {x: 0.9987002, y: -0.0017943615, z: 0.05093761}
   m_TwistLimitSpring:
@@ -8636,7 +8670,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 0e3ad63f883b06b458c1ef2d59167313, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8734,7 +8768,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -0.99995315, y: 0.009553416, z: -0.0015871101}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 0.00000026263297, y: 2.7646434, z: -0.000000055180863}
   serializedVersion: 2
   m_SwingAxis: {x: -0.0022200604, y: -0.066612326, z: 0.99777645}
   m_TwistLimitSpring:
@@ -8973,7 +9007,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 1.8775257e-12, z: -4.657466e-11}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.00000021214888, y: 2.5614877, z: 0.015754981}
   serializedVersion: 2
   m_SwingAxis: {x: 4.638423e-11, y: 0.000000003754394, z: 1}
   m_TwistLimitSpring:
