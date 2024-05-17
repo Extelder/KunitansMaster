@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using UnityEngine;
 using DG.Tweening;
 using UniRx;
@@ -18,12 +18,6 @@ public class PlayerCamera : MonoBehaviour
     private Tween _fovTween;
 
     private CompositeDisposable _disposable = new CompositeDisposable();
-
-    private void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
 
     private void OnDisable()
     {

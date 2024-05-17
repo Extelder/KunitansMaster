@@ -24,7 +24,7 @@ public class OnRaycastWeaponShootTrail : MonoBehaviour
         Vector3 point;
         if (hit == null)
         {
-            point = _nullHitSafeTrailTargetPoint.position;
+            point = _nullHitSafeTrailTargetPoint.position + _weaponShoot.CurrentShootOffset;
         }
         else
         {
